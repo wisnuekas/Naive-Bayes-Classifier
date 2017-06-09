@@ -13,4 +13,9 @@
 
 
 
-Route::get('/','DatatriningController@index');
+Route::post('/result','DatatriningController@index');
+Route::get('/result','DatatriningController@result');
+
+Route::get('/', function (){
+  return view('index');
+});

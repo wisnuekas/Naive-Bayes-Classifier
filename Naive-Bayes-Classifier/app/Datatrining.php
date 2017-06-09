@@ -25,7 +25,7 @@ class Datatrining extends Model
 
         if($dataParam == 0){
             $dataParam = $dataParam +1;
-            $dataOutputParam = $dataOutputParam + 2;
+            $dataOutputParam = $dataOutputParam + 3;
         }
 
         $page = $dataParam/$dataOutputParam;

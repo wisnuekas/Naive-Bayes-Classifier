@@ -1,0 +1,65 @@
+body{
+  background-color: #2286c3;
+}
+
+h3, h1{
+  color: #fff;
+}
+
+h1{
+  font-size: 68px;
+}
+
+.form-primary{
+  background-color: #fff;
+  padding: 50px;
+}
+
+.container{
+  padding-top: 100px;
+}
+
+.btn{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  /*padding-top: 15px;
+  padding-bottom: 15px;*/
+  padding-left: 18px;
+  padding-right: 13px;
+  border-radius: 0px 15px 15px 20px
+}
+
+#age {
+  -webkit-animation-duration: 1s;
+  -webkit-animation-delay: 0s;
+  -moz-animation-duration: 1s;
+  -moz-animation-delay: 0s;
+}
+
+#spectacle {
+  -webkit-animation-duration: 1s;
+  -webkit-animation-delay: 0.5s;
+  -moz-animation-duration: 1s;
+  -moz-animation-delay: 0.5s;
+}
+
+#asigmatic {
+  -webkit-animation-duration: 1s;
+  -webkit-animation-delay: 1s;
+  -moz-animation-duration: 1s;
+  -moz-animation-delay: 1s;
+}
+
+#tear {
+  -webkit-animation-duration: 1s;
+  -webkit-animation-delay: 1.5s;
+  -moz-animation-duration: 1s;
+  -moz-animation-delay: 1.5s;
+}
+
+#output {
+  -webkit-animation-duration: 2s;
+  -webkit-animation-delay: 2s;
+  -moz-animation-duration: 2s;
+  -moz-animation-delay: 2s;
+}

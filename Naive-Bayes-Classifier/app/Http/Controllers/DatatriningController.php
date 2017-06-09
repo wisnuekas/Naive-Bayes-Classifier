@@ -7,35 +7,48 @@ use App\Datatrining;
 
 class DatatriningController extends Controller
 {
-    public function index(){
+    public function index(Request $req){
         $poutput = Datatrining::poutput(1);
-        $page1 = Datatrining::page(1,1);
-        $pspactacle1 = Datatrining::pspactacle(1,1);
-        $pasigmatic1 = Datatrining::pasigmatic(1,2);
-        $ptear1 = Datatrining::ptear(1,2);
+        $page1 = Datatrining::page(1,$req->age);
+        $pspactacle1 = Datatrining::pspactacle(1,$req->spectacle);
+        $pasigmatic1 = Datatrining::pasigmatic(1,$req->asigmatic);
+        $ptear1 = Datatrining::ptear(1,$req->tear);
         $countpsatu = $poutput * $page1 * $pspactacle1 * $pasigmatic1 * $ptear1;
         //dd($countpsatu);
         $poutput2 = Datatrining::poutput(2);
-        $page2 = Datatrining::page(2,1);
-        $pspactacle2 = Datatrining::pspactacle(2,1);
-        $pasigmatic2 = Datatrining::pasigmatic(2,2);
-        $ptear2 = Datatrining::ptear(2,2);
+        $page2 = Datatrining::page(2,$req->age);
+        $pspactacle2 = Datatrining::pspactacle(2,$req->spectacle);
+        $pasigmatic2 = Datatrining::pasigmatic(2,$req->asigmatic);
+        $ptear2 = Datatrining::ptear(2,$req->tear);
         $countpdua = $poutput2 * $page2 * $pspactacle2 * $pasigmatic2 * $ptear2;
 
         $poutput3 = Datatrining::poutput(3);
-        $page3 = Datatrining::page(3,1);
-        $pspactacle3 = Datatrining::pspactacle(3,1);
-        $pasigmatic3 = Datatrining::pasigmatic(3,2);
-        $ptear3 = Datatrining::ptear(3,2);
+        $page3 = Datatrining::page(3,$req->age);
+        $pspactacle3 = Datatrining::pspactacle(3,$req->spectacle);
+        $pasigmatic3 = Datatrining::pasigmatic(3,$req->asigmatic);
+        $ptear3 = Datatrining::ptear(3,$req->tear);
         $countptiga = $poutput3 * $page3 * $pspactacle3 * $pasigmatic3 * $ptear3;
         //dd($countpsatu, $countpdua, $countptiga);
         if(($countpsatu>$countpdua)&&($countpsatu>$countptiga)){
-            $output = 'satu';
+            $output = 'using hard contact lenses';
         }elseif (($countpdua>$countpsatu)&&($countpdua>$countptiga)){
-            $output = 'dua';
+            $output = 'using soft contact lenses';
         }else{
-            $output ='tiga';
+            $output ='not using any contact lenses';
         }
-        return view('datatrining.index')->with('output',$output);
+
+        return view('datatrining.index', [
+          'age' => $req->age,
+          'spectacle' => $req->spectacle,
+          'asigmatic' => $req->asigmatic,
+          'tear' => $req->tear,
+          'output' => $output
+        ]);
     }
+
+    public function result()
+    {
+      return view('index');
+    }
+
 }
